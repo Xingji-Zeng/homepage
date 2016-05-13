@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Gitのセットアップ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="copyright" content="Template Party">
+<meta name="description" content="GitのSSHの配置方法の説明">
+<link rel="stylesheet" href="..\css/style.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="..\js/openclose.js"></script>
+</head>
+
+<body id="top">
+
+<header>
+<div id="inner">
+<h1 id="logo"><font color=white size=6>ZENG's homepage</font></h1>
+<address><span class="tel">Tel：090-8529-2503</span>Mail: zeng.xingji.zq8@is.naist.jp</address>
+</div>
+</header>
+<!----------------------------ここからは正文-------------------------------->
+<div id="contents">
+<div id="main">
+<section>
+<p align=center ><font size=5>Git勉強ノート(1)</br>SSHでGithubを管理する方法（前）</font></p>
+<h4>Gitとは?</h4>
+<p>
+Gitというのは、バージョン管理における非常に便利なツールである。それを使いこなせれば、開発は非常に便利になる。Gitを使うことにより、”いつでも、どこでも”のソースコード管理は可能になりました。Gitの基本の操作を飛ばして、いきなりリモート管理について語るのはあんまりよくないが、あくまで自分のためのノードなので、ここはやはり自分が忘れやすいともうことを軸にして記録をしたいです。</p>
+<h4>今回使った環境</h4>
+<p>
+開発環境により、配置の手順が若干異なる可能があるため、始まる前に一応今回使った環境を言っておきます。</br>
+OS: OS X EI Capitan 10.11.4</br>
+機械：iMac(20-inch, Early 2009)</br>
+Gitのリモート倉庫：Github
+</p>
+<h4>事前準備</h4>
+<p>
+<b>まずはGithubのアカウントの取得。</b><a href="https://github.com/">Github</a>とは、ソースコードを保存する倉庫を提供しているウエブサイトで、アカウントを持っていれば、そこにソースコードを保存することができる。そこにアクセスすれば、簡単に登録できます。</br>
+登録ができたら、<b>次はレポジトリの作成。</b>Githubにロクインすれば、この画面が出てきて、右下のボータンを押すと、新しいレポジトリを作成できる。
+<img src="images/git_note_1_1.png"></img>
+空いてるとところを入力して、レポジトリを作成する。</br>
+<img src="images/git_note_1_2.png"></img>
+
+これが終わったら、初めてだったらまずローカルでGitのユーザーネームやメールアドを設定するする必要がある、ターミナルを開いて、以下のコマンドを打てばいいです：</br>
+$git config --global user.name <font color=green>"yourname"</font></br>
+$git config --global user.name <font color=green>"your_email"</font></br>
+黒い字はそのまま打てばいい内容で、緑字は自分の情報を合わせて書くもんです。</br>
+ここまで、準備はオーケーです。
+</p>
+</section>
+
+</div>
+<!--/main-->
+<!------------------------ここからは左側------------------------------------>
+<div id="sub">
+
+<nav id="menubar" class="box1">
+<h2>メニュー</h2>
+<ul class="submenu mb10">
+<li><a href="..\index.html">ホーム</a></li>
+<li><a href="..\experience.html">経験</a></li>
+<li><a href="..\development.html">遊び開発</a></li>
+<li><a href="..\paper.html">面白い論文</a></li>
+<li><a href="..\ilust.html">日頃の落書き</a></li>
+<li><a href="..\note.html">勉強のノード</a></li>
+</ul>
+</nav>
+
+<!--<aside>
+<h2>関連情報</h2>
+<ul class="submenu">
+<li><a href="#">関連情報リンク</a></li>
+<li><a href="#">関連情報リンク</a></li>
+<li><a href="#">関連情報リンク</a></li>
+</ul>
+</aside>-->
+
+<!--<div class="box1">
+<section>
+<h2>この見出しはh2タグです</h2>
+<p>このボックスは、class="box1"と指定すれば出ます。ここに画像を置く場合、PC環境だと幅210pxまで。それ以上だと自動縮小されます。</p>
+</section>
+</div>
+<!--/box1-->
+
+<!--
+<section>
+<h2>この見出しはh2タグです</h2>
+<p>ここのスペースも使えます。ここに画像を置く場合、PC環境だと幅240pxまで。それ以上だと自動縮小されます。</p>
+</section>
+
+</div>
+<!--/sub-->
+
+
+
+<p id="pagetop"><a href="#">↑ PAGE TOP</a></p>
+
+</div>
+<!--/contents-->
+
+<footer>
+<small>Copyright&copy; <a href="index.html">ZENG</a> All Rights Reserved.</small>
+<span class="pr"><a href="http://template-party.com/" target="_blank">Web Design:Template-Party</a></span>
+</footer>
+
+<!--スライドショースクリプト-->
+<script type="text/javascript" src="js/slide_simple_pack.js"></script>
+
+<!--スマホ用更新情報-->
+<script type="text/javascript">
+if (OCwindowWidth() < 480) {
+	open_close("newinfo_hdr", "newinfo");
+}
+</script>
+
+</body>
+</html>
