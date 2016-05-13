@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>STG紹介</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+<header>
+<div id="inner">
+<a href="../index.html" style="text-decoration: none;"><h1 id="logo"><font color=white size=6>ZENG's homepage</font></h1></a>
+<address><span class="tel"><font color=white>Tel：090-8529-2503</span>Mail: zeng.xingji.zq8@is.naist.jp</font></address>
+<nav id="menubar" class="box1" align=right>
+<div align=right>
+<a href="../index.html" style="text-decoration: none;"><font color=white>ホーム|</font></a>
+<a href="../experience.html" style="text-decoration: none;"><font color=white>経験|</font></a>
+<a href="../development.html" style="text-decoration: none;"><font color=white>遊び開発|</font></a>
+<a href="../paper.html" style="text-decoration: none;"><font color=white>面白い論文|</font></a>
+<a href="../illust.html" style="text-decoration: none;"><font color=white>日頃の落書き|</font></a>
+<a href="../note.html" style="text-decoration: none;"><font color=white>勉強のノード</font></a>
+</div>
+</nav>
+
+</div>
+
+</header>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>簡単なシューティングゲームを作ってみました</h2>
+                    <!--<h4>ゲームファイルのリンク：</h4>-->
+					<h5>光メディアインタフェース研究室</h5>
+					<p>
+						<small>曾　醒基</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>ゲーム紹介</h2>
+                    <h4>ゲームタイプ：シューティングゲーム</h4>
+                    <h4>勝利条件：敵20機撃破</h4>
+                    <h4>失敗条件：自機の撃墜</h4>
+                    <h4>実装言語：C++</h4>
+					<p>
+						今回はシューティングゲームを挑戦してみました。画面はコンソールで構成されていて、今はまだ簡単ですが、もう基本的な機能は揃っていますので、時間を掛ければ、色々追加できます。それでは、処理の流れを紹介していきます。
+					</p>
+				</section>
+                
+                <section>
+                     <section>
+                    <h2>全体の処理の流れ</h2>
+                    <div align="left">1,全体の初期化をする</div></h5>
+                    <div align="left">2,プレーヤーHPが0以下または撃墜数が20以上の時、ゲーム終了</div></h5>
+                    <div align="left"><font color="#ff0000">3,キーボードの入力を検測し、プレーヤーポジションを変化させる</font></div></h5>
+                    <div align="left"><font color="#ff0000">5,背景を描画する</font></div></h5>
+                    <div align="left"><font color="#ff0000">6,敵全弾に対して被弾判定を行い、現存する弾を描画する</font></div></h5>
+                    <div align="left"><font color="#ff0000">7,プレーヤーを描画する</font></div></h5>
+                    
+                    </section>
+                     <section>
+                         <h2>全体の処理の流れ</h2>
+                         <div align="left"><font color="#ff0000">8,敵を生成し、敵のシューティングを行う</font></div></h5>
+                         <div align="left"><font color="#ff0000">9,プレーヤーの弾の被弾判定を行い、現存する弾を描画する</font></div></h5>
+                         <div align="left"><font color="#ff0000">10,撃墜されていない敵を検出し、それを描画し、次のループに入る</font></div></h5>
+                         <div align="left">11,クリアシーンまたはゲームオーバーシーンを描画する</div></h5>
+                         <div align="left">12,終わり</div></h5>
+                     </section>
+                </section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>描画</h2>
+						<p>今回作ったプログラムでは、ゲーム全体の処理を巨大なループで置いていて、一回のループを1フレームとしています。基本的には1フレームの中で、背景、敵の弾、自機、自機の弾、敵という順場で文字を出力し、画面を更新します。</p>
+						<br>
+					</section>
+
+					<section>
+						<h2>背景</h2>
+						<p>フレームごとに、前のフレームの画面の消去を兼ねて、最初は背景を描画します。</p>
+						<img src="bg.PNG" width=500 height=350>
+						</a>
+					</section>
+                    <section>
+                        <h2>プレーヤー</h2>
+                        <p>次に、プレーヤーを描画する。</p>
+                        <img src="player.PNG" width=500 height=350>
+                            </section>
+                    <section>
+                        <h2>弾（敵）</h2>
+                        <p>その次に、弾の被弾判定を行い、弾描画する。被弾判定については後で説明します。</p>
+                        <img src="enemybullet.PNG" width=500 height=350>
+                    </section>
+                    <section>
+                        <h2>弾（プレーヤー）</h2>
+                        <p>若干変な弾も出てきて、まだ修正する必要があります。</p>
+                        <img src="playerbullet.PNG" width=500 height=350>
+                            </section>
+                    <section>
+                        <h2>敵</h2>
+                        <img src="enemy.PNG" width=500 height=350>
+                            </section>
+                    <section>
+                        <h2>爆発</h2>
+                        <p>敵の爆発効果もあります。</p>
+                        <img src="boom.PNG" width=500 height=350>
+                            </section>
+                    <section>
+                        <h2>GAME OVER</h2>
+                        <p>プレーヤーが被弾したらゲームオーバーで、リトライ事もできます。</p>
+                        <img src="gameover.PNG" width=500 height=350>
+                            </section>
+                    <section>
+                        <h2>クリア</h2>
+                        <p>20機撃破したら、クリア画面が出てきます。</p>
+                        <img src="clear.PNG" width=500 height=350>
+                            </section>
+				</section>
+
+　　　　　　　　　<section>
+				<section>
+					<h2>要素の管理</h2>
+					<p>
+                    1フレームの中で、弾、敵、プレーヤーなど各種の独立な要素が存在しています。一つの弾が、誰かを当てているかどうかを判断するとき、すべての弾とキャラクター（自機、敵）の属性（HP、positionなど）を調べる必要があります。なので、要素を分けて管理する必要があります。今回ではC++の動的配列クラスstd::vectorを使って要素の管理を実現しました。
+					</p>
+				</section>
+                <section>
+                    <h2>vectorとは？</h2>
+                    <p>
+                    普通の配列と同じものだと思えいいです。ただ、配列の長さが事前に定める必要がなく、処理の流れと共に、長さを増やすことができます。
+                    </p>
+                </section>
+                <section>
+                    <h2>よく使うコマンド</h2>
+                    
+                    <p>配列の宣言：<font color=orange>vector ＜int＞ x   =  int x[10]</font></p>
+                    <p>要素の追加：<font color=orange>x.pushback(int a)</font> 配列の一番最後に要素aを追加します。</p>
+                    <p>配列の長さの獲得：<font color=orange>x.size() </font>ループなどでよく使われる</p>
+                    
+                </section>
+                <section>
+                    <h2>実際の使い方</h2>
+                    
+                    <p>まずは要素を表す構造体を定義します。弾を例にするとこんな感じです</p>
+						<font color=orange>
+                        <div align="left">struct bullet</div></h5>
+                        <div align="left"> {</div></h5>
+                        <div align="left">&nbsp;&nbsp;&nbsp;vec2 pos;//position</div></h5>
+                        <div align="left">&nbsp;&nbsp;&nbsp;int HP;//HPにより弾の存在を判別する</div></h5>
+                        <div align="left">&nbsp;&nbsp;&nbsp;vec2 speed;//弾の飛行速度や方向をコントロールする</div></h5>
+                        <div align="left">&nbsp;&nbsp;&nbsp;char* shape[2];//弾の形、通常や爆発状態2種類ある</div></h5>
+                        <div align="left">&nbsp;&nbsp;&nbsp;int col;//弾の色}</div></h5>
+                         <div align="left"> }</div></h5>
+                       </font> 
+                        </section>
+                <section>
+                    <h2>実際の使い方</h2>
+					<font size=5 align=left>                    
+                    <p align=left>構造体bulletのvector作ります。pはプレーヤーと言う意味です。</p>
+                    <div align="left"><font color=orange>vector &lt;bullet&gt; bulletmanager_p</font></div></h5>
+                    <p align=left>弾のパターンの宣言し、初期化します。ここはbulletAとする</p>
+                    <div align="left"><font color=orange> bullet bulletA;</font></div></h5>
+                    <p align=left>bulletmanage_pやbulletAにより、弾の管理は可能、例えば、Aパターンの弾を発射：</p>
+                    <div align="left"><font color=orange> bulletmanage_p.pushback(bulletA);</font></div></h5>
+                    <p align=left>bulletmanage_pを通じて各弾の属性を調べれば、いろいろな判断もできます。</p>
+					</font>
+                </section>
+                </section>
+
+
+
+				<section>
+					<h2>被弾判定について</h2>
+					<p>
+						今回作ったプログラムは要素の出現や消失を管理するために、全要素に初期HP　3を与えています。フレームごとに全部の弾に対して被弾判定を行います。弾が当たったら、弾も当たられたキャラクターもHPが10引かれて、次のフレームに消えていきます。今回使う当たる標準は簡単で、弾とキャラクターのポジションが一致すれば当たると判定する。
+					</p>
+				</section>
+                <section>
+                    <h2>改善できるところ</h2>
+　　　　　　　　　　<div align="left">ボスの追加</div></h5>
+　　　　　　　　　　<div align="left">弾や敵パターンの種類を増やす</div></h5>
+　　　　　　　　　　<div align="left">自機と敵とのぶつかり合う判定の追加</div></h5>
+　　　　　　　　　　<div align="left">ポイント、爆弾、ボーナスなどの追加</div></h5>
+                </section>
+                <section>
+                    <h2>まとめ</h2>
+                    <p>
+                    今回勉強になったこと：</p>
+                    <div align="left"> ーコンソールの使い方</div></h5>
+                    <div align="left"> vectorクラスの使い方</div></h5>
+                    <div align="left"> ゲームでの各種の処理の流れ</div></h5>
+                </section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'concave', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

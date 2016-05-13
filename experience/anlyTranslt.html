@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Directional Dipole Model</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="copyright" content="Template Party">
+<meta name="description" content="趣味半分で作ったサイトで、普段のノードや日頃のイラストの作品を乗せたい">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css">
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script>
+	var link=document.createElement('link');
+	link.rel='stylesheet';
+	link.type='text/css'
+	link.href=window.location.search.match(/print-pdf/gi)?'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+</head>
+
+<!--<body id="top">-->
+
+<header>
+<div id="inner">
+	<a href="../index.html" style="text-decoration: none;"><h1 id="logo"><font color=white size=6>ZENG's homepage</font></h1></a>
+<address><span class="tel"><font color=white>Tel：090-8529-2503</span>Mail: zeng.xingji.zq8@is.naist.jp</font></address>
+<nav id="menubar" class="box1">
+<div align=right>
+<a href="../index.html" style="text-decoration: none;"><font color=white>ホーム|</font></a>
+<a href="../experience.html" style="text-decoration: none;"><font color=white>経験|</font></a>
+<a href="../development.html" style="text-decoration: none;"><font color=white>遊び開発|</font></a>
+<a href="../paper.html" style="text-decoration: none;"><font color=white>面白い論文|</font></a>
+<a href="../illust.html" style="text-decoration: none;"><font color=white>日頃の落書き|</font></a>
+<a href="../note.html" style="text-decoration: none;"><font color=white>勉強のノード</font></a>
+</div>
+</nav>
+
+</div>
+
+</header>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<!--p1-->
+		<section data-background="images/bg.JPG">
+		<h2>Directional Dipole Model</br>
+			に基づく表面化散乱パラメーターの推定</h2>
+		<p><font size=5 color=grey>奈良先端科学技術大学院大学</font></p>
+		<p><font size=5 color=grey>情報科学研究科　光メディアインタフェース研究室</font></p>
+		<p><font size=5 color=grey>曾　醒基(M2)</font></p>
+		</section>
+		<!--p2-->
+		<section>
+			<section>
+				<h2>研究背景</h2>
+				<p align=left><font size=5>・皮膚、石鹸などの半透明物体が多数存在</font></p>
+				<img width=300 height=200 align=center src="images/soap.JPG"></img>
+				&nbsp;               
+				<img width=300 height=200 align=center src="images/soap_d.JPG"></img>
+				<p align=left><font size=5>・コンピューターに半透明物体の材質を識別させるのは非常に有意味</font></p>
+			</section>
+			<section>
+				<h2>考えられる応用例</h2>
+				<p align=left><font size=5>・機械に半透明物体を理解させ、より知能的な工場自動化の実現</font></p>
+				<p align=left><font size=4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~例1：ポテトや卵など、異なる商品を掴む力の自動制御</font></p>
+				<p align=left><font size=4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~例2：商品数量の自動統計</font></p>
+
+				<p align=left><font size=5>・半透明物体の材質特性の取得時間を短縮させ、CG制作効率の向上</font></p>
+			</section>
+		</section>
+		<!--p3-->
+		<section>
+			<h2>現状</h2>
+			<p align=left><font size=5>・半透明物体の内部で起きる複雑な光学現象の解析が極めて難しい</font></p>
+			<p align=left><font size=5>・半透明物体の光学特性を厳密に取得するには複雑な光学システムが必須</font></p>
+			<p align=left><font size=4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~コストが高い</font></p>
+			<p align=left><font size=4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~環境ノイズに弱く、大規模の応用は難しい</font></p>
+			<p align=left><font size=5>・半透明物体に特化する方法が少ない</font></p>
+		</section>
+		<!--p4-->
+		<section>
+			<h2>自身の取り組み</h2>
+			<p align=left><font size=5>・CGのレンダリングを勉強しながら、問題の解決手法を提案しました</font></p>
+			<p align=left><font size=5>・英、和論文を読み、既存手法から自分の研究に適用できるツールを探します</font></p>
+			<p align=left><font size=5>・研究の要求に応じて、プログラミングスキルをしっかり身につきます</font></p>
+			<p align=left><font size=5>・光学特性を測定するために、厳密な光学システムを設計しました</font></p>
+
+		</section>
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+</script>
+
+<!--/main-->
+<!-----------------------ここからは左側---------------------------------->
+</body>
+</html>
